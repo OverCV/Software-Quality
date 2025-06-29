@@ -8,7 +8,7 @@ Versión dos:
 ```mermaid
 mindmap
   root((🏛️ ASEGURAMIENTO<br/>DE CALIDAD<br/>DEL SOFTWARE))
-    
+
     🎯 CALIDAD DE SOFTWARE
       📋 Definiciones
         📜 ISO 8402
@@ -26,7 +26,7 @@ mindmap
         ✈️ Aerolíneas
         🏦 Financiero
         🏥 Salud
-    
+
     🔄 PROCESOS SOFTWARE
       🎯 Fundamentos
         📋 SWEBOK
