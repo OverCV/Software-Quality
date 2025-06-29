@@ -4,120 +4,6 @@ Asegúrate de relacionar los conceptos clave que se te proporcionaron en el list
 
 ## 🎯 Mapa Conceptual: Ecosistema Integrado del Aseguramiento de Calidad
 
-Versión uno:
-```mermaid
-mindmap
-  root((🏛️ ASEGURAMIENTO<br/>DE CALIDAD<br/>DEL SOFTWARE))
-    
-    🎯 CALIDAD DE SOFTWARE
-      📋 Definiciones Formales
-        📜 ISO 8402
-        ⚙️ IEEE 730
-        👥 ISO/IEC 25023
-      🎭 Múltiples Perspectivas
-        📱 Usuario Final
-        💼 Gerente Proyecto
-        👨‍💻 Desarrollador
-      💰 Economía TCO
-        ✅ Costos Prevención
-        ❌ Costos Falla
-        📊 Costo Total Propiedad
-      🚨 Impacto Crítico
-        ✈️ Aerolíneas
-        🏦 Sector Financiero
-        🏥 Salud
-        🚦 Gobierno
-    
-    🔄 PROCESOS DE SOFTWARE
-      🎯 Fundamentos
-        📋 Definición SWEBOK
-        🏢 Enfoque John Croxy
-        ❓ Qué Quién Cuándo Cómo
-      🏗️ Tres Pilares Esenciales
-        🔄 PROCESOS
-        ⚙️ MÉTODOS
-        🛠️ HERRAMIENTAS
-      🏥 Caso Innovate Health
-        🚀 Cambios Regulatorios
-        📊 Análisis Requisitos
-        🔄 Desarrollo Scrum
-        🔍 QA Riguroso
-        🎯 Implementación Gradual
-        📈 Retroalimentación
-        🔄 Mejora Continua
-      📐 Estándares Clave
-        📜 ISO/IEC/IEEE 12207
-        🗺️ BPMN
-        📊 SPEM
-      ✅ Características Efectivas
-        🔍 Comprensible
-        🔧 Adaptable
-        📊 Medible
-        🎯 Efectivo
-    
-    📈 MODELOS DE CALIDAD
-      ⚖️ Evolución Madurez
-        📉 Procesos Inmaduros
-          🎲 Ad hoc
-          👤 Dependientes individuos
-          📊 Resultados inconsistentes
-        📈 Procesos Maduros
-          📋 Disciplinados
-          📝 Definidos formalmente
-          📊 Controlados y medidos
-      🏆 CMMI Framework
-        1️⃣ Inicial
-        2️⃣ Gestionado
-        3️⃣ Definido
-        4️⃣ Cuantitativamente Gestionado
-        5️⃣ Optimizado
-      🌐 Marco Internacional
-        📊 ISO/IEC 33000 SPICE
-        🔗 Alineado ISO 12207
-        📈 Capability Levels
-      🌎 Adaptaciones Regionales
-        🇧🇷 MPS.BR Brasil
-        🇲🇽 MoProSoft México
-        🌎 Competisoft Iberoamérica
-      🎯 Utilidades Clave
-        🗺️ Guía Estructurada
-        📊 Medición Progreso
-        🏅 Cultura Calidad
-        🎖️ Certificaciones
-    
-    💰 DEUDA TÉCNICA
-      🏦 Concepto Ward Cunningham
-        💳 Metáfora Financiera
-        ⚖️ Velocidad vs Calidad
-        📈 Atajos hoy Intereses mañana
-        🎯 Trabajo pendiente calidad óptima
-      🎯 Clasificación Tipos
-        ✅ Intencional Prudente
-        ❌ Intencional Imprudente
-        🤔 No Intencional Prudente
-        😵 No Intencional Imprudente
-      📊 Impacto Crítico
-        🐌 Desarrollo Lento
-        💸 20-40% Presupuesto
-        🔄 Efecto Acumulativo
-        ⚠️ Calidad Externa Afectada
-      🔗 Relación Procesos
-        📉 Señal Procesos Inmaduros
-        🔍 Indicador Salud Sistema
-        📊 Necesidad Mejora
-      🛠️ Gestión PHVA
-        📋 Planificar
-        🔧 Hacer
-        ✅ Verificar
-        🔄 Actuar
-      🚀 Prácticas Prevención
-        🔄 Refactorización Continua
-        👥 Code Reviews
-        🤖 Automatización Pruebas
-        📊 Integración Continua
-        📈 Visualización Backlog
-```
-
 Versión dos:
 ```mermaid
 mindmap
@@ -161,7 +47,7 @@ mindmap
         📜 ISO 12207
         🗺️ BPMN
         📊 SPEM
-    
+
     📈 MODELOS CALIDAD
       ⚖️ Madurez
         📉 Inmaduros
@@ -180,7 +66,7 @@ mindmap
         🇧🇷 MPS.BR
         🇲🇽 MoProSoft
         🌎 Competisoft
-    
+
     💰 DEUDA TÉCNICA
       🏦 Ward Cunningham
         💳 Metáfora
@@ -202,46 +88,160 @@ mindmap
         🔄 Actuar
 ```
 
+Versión uno:
+```mermaid
+mindmap
+  root((🏛️ ASEGURAMIENTO<br/>DE CALIDAD<br/>DEL SOFTWARE))
+
+    🎯 CALIDAD DE SOFTWARE
+      📋 Definiciones Formales
+        📜 ISO 8402
+        ⚙️ IEEE 730
+        👥 ISO/IEC 25023
+      🎭 Múltiples Perspectivas
+        📱 Usuario Final
+        💼 Gerente Proyecto
+        👨‍💻 Desarrollador
+      💰 Economía TCO
+        ✅ Costos Prevención
+        ❌ Costos Falla
+        📊 Costo Total Propiedad
+      🚨 Impacto Crítico
+        ✈️ Aerolíneas
+        🏦 Sector Financiero
+        🏥 Salud
+        🚦 Gobierno
+
+    🔄 PROCESOS DE SOFTWARE
+      🎯 Fundamentos
+        📋 Definición SWEBOK
+        🏢 Enfoque John Croxy
+        ❓ Qué Quién Cuándo Cómo
+      🏗️ Tres Pilares Esenciales
+        🔄 PROCESOS
+        ⚙️ MÉTODOS
+        🛠️ HERRAMIENTAS
+      🏥 Caso Innovate Health
+        🚀 Cambios Regulatorios
+        📊 Análisis Requisitos
+        🔄 Desarrollo Scrum
+        🔍 QA Riguroso
+        🎯 Implementación Gradual
+        📈 Retroalimentación
+        🔄 Mejora Continua
+      📐 Estándares Clave
+        📜 ISO/IEC/IEEE 12207
+        🗺️ BPMN
+        📊 SPEM
+      ✅ Características Efectivas
+        🔍 Comprensible
+        🔧 Adaptable
+        📊 Medible
+        🎯 Efectivo
+
+    📈 MODELOS DE CALIDAD
+      ⚖️ Evolución Madurez
+        📉 Procesos Inmaduros
+          🎲 Ad hoc
+          👤 Dependientes individuos
+          📊 Resultados inconsistentes
+        📈 Procesos Maduros
+          📋 Disciplinados
+          📝 Definidos formalmente
+          📊 Controlados y medidos
+      🏆 CMMI Framework
+        1️⃣ Inicial
+        2️⃣ Gestionado
+        3️⃣ Definido
+        4️⃣ Cuantitativamente Gestionado
+        5️⃣ Optimizado
+      🌐 Marco Internacional
+        📊 ISO/IEC 33000 SPICE
+        🔗 Alineado ISO 12207
+        📈 Capability Levels
+      🌎 Adaptaciones Regionales
+        🇧🇷 MPS.BR Brasil
+        🇲🇽 MoProSoft México
+        🌎 Competisoft Iberoamérica
+      🎯 Utilidades Clave
+        🗺️ Guía Estructurada
+        📊 Medición Progreso
+        🏅 Cultura Calidad
+        🎖️ Certificaciones
+
+    💰 DEUDA TÉCNICA
+      🏦 Concepto Ward Cunningham
+        💳 Metáfora Financiera
+        ⚖️ Velocidad vs Calidad
+        📈 Atajos hoy Intereses mañana
+        🎯 Trabajo pendiente calidad óptima
+      🎯 Clasificación Tipos
+        ✅ Intencional Prudente
+        ❌ Intencional Imprudente
+        🤔 No Intencional Prudente
+        😵 No Intencional Imprudente
+      📊 Impacto Crítico
+        🐌 Desarrollo Lento
+        💸 20-40% Presupuesto
+        🔄 Efecto Acumulativo
+        ⚠️ Calidad Externa Afectada
+      🔗 Relación Procesos
+        📉 Señal Procesos Inmaduros
+        🔍 Indicador Salud Sistema
+        📊 Necesidad Mejora
+      🛠️ Gestión PHVA
+        📋 Planificar
+        🔧 Hacer
+        ✅ Verificar
+        🔄 Actuar
+      🚀 Prácticas Prevención
+        🔄 Refactorización Continua
+        👥 Code Reviews
+        🤖 Automatización Pruebas
+        📊 Integración Continua
+        📈 Visualización Backlog
+```
+
 
 ## 🌊 Flujo de Interconexiones y Dependencias
 
 ```mermaid
 flowchart TD
     A["🎯 CALIDAD DE SOFTWARE<br/>🔹 Objetivo Central<br/>🔹 Múltiples Definiciones<br/>🔹 Perspectivas Stakeholders<br/>🔹 Economía TCO"] --> B["🔄 PROCESOS DE SOFTWARE<br/>🔹 Vehículo para Calidad<br/>🔹 Tres Pilares Fundamentales<br/>🔹 Ciclo Innovate Health<br/>🔹 Estándares ISO/BPMN"]
-    
+
     B --> C["📈 MODELOS DE CALIDAD<br/>🔹 Hoja de Ruta Madurez<br/>🔹 CMMI 5 Niveles<br/>🔹 ISO 33000 Internacional<br/>🔹 Adaptaciones Regionales"]
-    
+
     C --> D["💰 DEUDA TÉCNICA<br/>🔹 Indicador Salud Sistema<br/>🔹 Metáfora Ward Cunningham<br/>🔹 Tipos y Gestión<br/>🔹 Ciclo PHVA"]
-    
+
     D -.->|"Retroalimentación<br/>Mejora Continua"| A
-    
+
     subgraph PILARES ["🏗️ TRES PILARES TRANSVERSALES"]
         E["🔄 PROCESOS<br/>Qué y Cuándo"]
         F["⚙️ MÉTODOS<br/>Cómo Ejecutar"]
         G["🛠️ HERRAMIENTAS<br/>Automatización"]
     end
-    
+
     B --> PILARES
     PILARES --> A
     PILARES --> C
     PILARES --> D
-    
+
     subgraph ECONOMIA ["💰 ECONOMÍA INTEGRADA"]
         H["✅ Inversión en Calidad<br/>Prevención + Evaluación"]
         I["❌ Costo NO-Calidad<br/>$2.8 Trillones USD"]
         J["📈 Ley Exponencial<br/>1x → 100x costo"]
         K["📊 TCO Total<br/>Ciclo Vida Completo"]
     end
-    
+
     A --> ECONOMIA
     D --> ECONOMIA
-    
+
     subgraph MEJORA ["🔄 MEJORA CONTINUA"]
         L["📈 CMMI Nivel 5<br/>Optimización"]
         M["🏥 Retroalimentación<br/>Innovate Health"]
         N["🛠️ Gestión Deuda<br/>PHVA Ciclo"]
     end
-    
+
     C --> MEJORA
     B --> MEJORA
     D --> MEJORA
@@ -255,7 +255,7 @@ flowchart TD
     classDef pilaresStyle fill:#6c5ce7,stroke:#5f3dc4,color:#fff
     classDef economiaStyle fill:#a29bfe,stroke:#6c5ce7,color:#fff
     classDef mejoraStyle fill:#fd79a8,stroke:#e84393,color:#fff
-    
+
     class A calidadStyle
     class B procesosStyle
     class C modelosStyle
