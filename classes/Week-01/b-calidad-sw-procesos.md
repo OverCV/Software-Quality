@@ -50,7 +50,6 @@ roles-in-processes
 metrics-in-software-process
 > medir el cumplimiento de objetivosmedir el cumplimiento de objetivos
 
-
 14. ¿Cuál de las siguientes es una característica típica de un proceso inmaduro en desarrollo de software?
 immature-process-characteristics
 > alta dependencia de individuos clave para la toma de decisiones
@@ -78,7 +77,6 @@ eliminar la deuda técnicaeliminar la deuda técnica
 19. según el texto guía, ¿cuál es la mejor definición de deuda técnica en el desarrollo de software?
 quality-models-for-SMEs
 > trabajo pendiente que genera esfuerzo y costos adicionales a futurotrabajo pendiente que genera esfuerzo y costos adicionales a futuro
-
 
 20. ¿Qué decisión origina una deuda técnica prudente según el texto guía?
 technical-debt-definition
