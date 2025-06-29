@@ -1,6 +1,5 @@
 # 🎤 **Calidad de Software: El Cinturón de Seguridad de la Vida Moderna**
 
-
 > La calidad del software ya no es un lujo, **es una necesidad**. Es la diferencia entre pedir comida y que te llegue un dron militar. 🤷‍♂️
 
 ¿Cuántas veces tu app se trabó justo cuando más la necesitabas? ¿O el GPS te mandó a la calle equivocada? Nos hemos acostumbrado a estos mini-desastres digitales, pero son solo la punta del iceberg.

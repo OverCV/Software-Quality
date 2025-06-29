@@ -1,5 +1,3 @@
-¡Entendido! Asumo la responsabilidad y me enfoco exclusivamente en el contenido del archivo `paste-2.txt` [1] y los recursos complementarios para reconstruir la respuesta con el nivel de detalle y la estructura que esperas, profundizando en los temas clave que mencionaste.
-
 # 🎬 **Generalidades sobre los Procesos de Desarrollo de Software**
 
 *Basado en las enseñanzas de Ian Somerville*

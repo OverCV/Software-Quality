@@ -1,5 +1,3 @@
-¡Entendido! Asumo la responsabilidad y me enfoco exclusivamente en el contenido del archivo `paste-2.txt` para reconstruir la respuesta con el nivel de detalle y estructura que esperas. Aquí tienes un análisis profundo basado en el guion de Ian Somerville.
-
 # 🎬 **Generalidades sobre los Procesos de Desarrollo de Software**
 
 *Basado en las enseñanzas de Ian Somerville*
@@ -64,6 +62,10 @@ Un proceso no es bueno solo por existir. Para ser efectivo, debe tener las sigui
 -   **Efectivo**: Su objetivo final es ayudar a los equipos a entregar productos de calidad a tiempo. Si no lo logra, falla en su propósito[1].
 
 En definitiva, un buen proceso no es un obstáculo burocrático, sino una **herramienta estratégica** para construir mejor software[1].
+
+---
+
+https://www.youtube.com/watch?v=Gk5CInkYXaQ&t=22s
 
 [1] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/2989799/517d9f5a-633c-49ce-8e52-35c79682b15d/paste-2.txt
 [2] https://fastercapital.com/es/tema/fomentar-la-retroalimentaci%C3%B3n-de-los-clientes-y-la-mejora-continua.html/1

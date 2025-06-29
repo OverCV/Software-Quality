@@ -49,7 +49,7 @@ La idea central es que la calidad se trata de comparar lo que se esperaba del so
 La pregunta no es cuánto cuesta la calidad, sino **cuánto nos cuesta no tenerla**. Los estudios son contundentes:
 > En 2018, el costo de la mala calidad del software en EE. UU. se estimó en **\$2.8 trillones de dólares**[9]. En 2020, la cifra fue de **\$2.08 trillones**, siendo las fallas de software en operación el principal contribuyente[10].
 
-![Costo de la mala calidad](./images/02D/coste-calidad.png)
+![Costo de la mala calidad](./images/02C/coste-calidad.png)
 
 Este costo se entiende mejor con el **modelo del iceberg**, que muestra que la mayoría de los costos están ocultos bajo la superficie[7].
 
@@ -79,7 +79,7 @@ La calidad no es un gasto, **es una inversión estratégica**[11]. Podemos divid
 
 La regla de oro en la ingeniería de software es simple y brutal: **entre más tarde se detecta un error, más costoso es corregirlo**.
 
-![Costo de la mala calidad](./images/02D/deuda-coste-tiempo.png)
+![Costo de la mala calidad](./images/02C/deuda-coste-tiempo.png)
 
 Un error que podría costar **\$1** arreglar en la fase de requisitos, puede costar **\$100 o más** si llega a producción[13]. Por eso, las prácticas que retrasan la detección de errores son atajos directos a mayores problemas.
 
