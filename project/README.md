@@ -1,3 +1,6 @@
 # Projecto Final
 
 Definición...
+
+Requisitos:
+...
