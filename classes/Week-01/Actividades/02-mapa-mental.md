@@ -271,7 +271,7 @@ flowchart TD
 
 #### 📋 **Definiciones Formales Complementarias**
 - **ISO 8402**: Aptitud para satisfacer necesidades explícitas e implícitas
-- **IEEE 730**: Grado de cumplimiento con requisitos establecidos  
+- **IEEE 730**: Grado de cumplimiento con requisitos establecidos 
 - **ISO/IEC 25023:2016**: Proporciona valor a diferentes stakeholders
 
 #### 🎭 **Perspectivas Múltiples pero Unificadas**

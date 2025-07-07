@@ -65,7 +65,7 @@ CMMI-model
 
 
 17. ¿Cuál es el objetivo de aplicar un modelo como ISO/IEC 33000?
-eliminar la deuda técnicaeliminar la deuda técnica
+eliminar la deuda técnica eliminar la deuda técnica
 > ISO/IEC-33000-objective
 
 18. ¿Cuáles de las siguientes son utilidades reales de los modelos de calidad de procesos para las PYMEs?

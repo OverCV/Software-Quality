@@ -1,5 +1,10 @@
 # 🏦 Análisis de Caso sobre Fallos de Software: TSB Bank 2018
 
+
+## Integrantes:
+- Juan David Díaz Castaño
+- Over Haider Castrillón Valencia
+
 ## 📋 Información General
 
 **Caso asignado**: TSB Bank - Fallo de Migración IT (Abril 2018)  
@@ -60,10 +65,10 @@
 
 #### **🏗️ Los Tres Pilares Rotos:**
 
-| Pilar | ❌ **Lo que falló** | ✅ **Lo que debió aplicarse** |
-|-------|-------------------|------------------------------|
-| **🔄 PROCESOS** | Governance inadecuado, falta de control de proyecto, ausencia de checkpoints | Procesos estructurados con gates obligatorios, governance robusto tipo CMMI |
-| **⚙️ MÉTODOS** | Testing insuficiente, gestión de riesgos deficiente, falta de metodologías probadas | Testing exhaustivo, gestión de riesgos sistemática, metodologías ágiles graduales |
+| Pilar              | ❌ **Lo que falló**                                                                              | ✅ **Lo que debió aplicarse**                                                                     |
+| ------------------ | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| **🔄 PROCESOS**     | Governance inadecuado, falta de control de proyecto, ausencia de checkpoints                    | Procesos estructurados con gates obligatorios, governance robusto tipo CMMI                      |
+| **⚙️ MÉTODOS**      | Testing insuficiente, gestión de riesgos deficiente, falta de metodologías probadas             | Testing exhaustivo, gestión de riesgos sistemática, metodologías ágiles graduales                |
 | **🛠️ HERRAMIENTAS** | Problemas con tercerización, falta de monitoreo en tiempo real, ausencia de rollback automático | Herramientas de monitoreo continuo, sistemas de rollback automático, gestión de terceros robusta |
 
 #### **🎯 Calidad del Software Ausente:**
@@ -77,10 +82,10 @@
 
 #### **💰 Análisis de Deuda Técnica (Matriz Ward Cunningham):**
 
-| **Tipo de Deuda** | **Clasificación** | **Evidencia en TSB** |
-|-------------------|-------------------|---------------------|
-| **❌ Intencional Imprudente** | **PRINCIPAL CULPABLE** | *"No tenemos tiempo para pruebas exhaustivas"* - Prisa por migrar sin testing adecuado |
-| **😵 No Intencional Imprudente** | **Secundaria** | Posible falta de conocimiento sobre gestión de riesgos en migraciones masivas |
+| **Tipo de Deuda**               | **Clasificación**      | **Evidencia en TSB**                                                                   |
+| ------------------------------- | ---------------------- | -------------------------------------------------------------------------------------- |
+| **❌ Intencional Imprudente**    | **PRINCIPAL CULPABLE** | *"No tenemos tiempo para pruebas exhaustivas"* - Prisa por migrar sin testing adecuado |
+| **😵 No Intencional Imprudente** | **Secundaria**         | Posible falta de conocimiento sobre gestión de riesgos en migraciones masivas          |
 
 #### **📊 Impacto de la Deuda Técnica:**
 - **Costo de "intereses"**: £81.35M por tomar el atajo de no hacer testing
@@ -100,10 +105,10 @@
 
 #### **🏆 Solución: CMMI Nivel 3 Mínimo**
 
-| **Nivel CMMI** | **Prácticas que habrían prevenido el fallo** |
-|----------------|---------------------------------------------|
-| **📊 Nivel 2: Gestionado** | • Gestión disciplinada de proyectos<br/>• Control de configuración<br/>• Aseguramiento de calidad básico |
-| **📋 Nivel 3: Definido** | • **Procesos organizacionales definidos**<br/>• **Gestión integrada de proyectos**<br/>• **Gestión de riesgos sistemática**<br/>• **Validación y verificación** |
+| **Nivel CMMI**            | **Prácticas que habrían prevenido el fallo**                                                                                                                    |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **📊 Nivel 2: Gestionado** | • Gestión disciplinada de proyectos<br/>• Control de configuración<br/>• Aseguramiento de calidad básico                                                        |
+| **📋 Nivel 3: Definido**   | • **Procesos organizacionales definidos**<br/>• **Gestión integrada de proyectos**<br/>• **Gestión de riesgos sistemática**<br/>• **Validación y verificación** |
 
 #### **🌐 Estándares Adicionales Aplicables:**
 - **ISO/IEC 33000 (SPICE)**: Evaluación de capacidad de procesos ANTES de migración
@@ -131,7 +136,7 @@ mindmap
         📊 Análisis TCO completo
         👥 Validación con usuarios reales
         🔄 Testing continuo en producción
-    
+
     🔄 PROCESOS SOFTWARE  
       ❌ FALLAS DETECTADAS
         🏗️ Tres Pilares completamente rotos
@@ -143,7 +148,7 @@ mindmap
         📊 Checkpoints obligatorios
         🎯 Pilotos controlados
         🛠️ Herramientas monitoreo continuo
-    
+
     📈 MODELOS CALIDAD
       ❌ FALLAS DETECTADAS
         📉 CMMI Nivel 1 caótico
@@ -155,7 +160,7 @@ mindmap
         📋 Procesos organizacionales definidos
         🌐 ISO 33000 evaluación previa
         📊 Gestión cuantitativa de riesgos
-    
+
     💰 DEUDA TÉCNICA
       ❌ FALLAS DETECTADAS
         ❌ Intencional Imprudente
@@ -168,6 +173,8 @@ mindmap
         ✅ Verificación continua antes de avanzar
         🔄 Capacidad de rollback inmediato
 ```
+
+![FotoMapaMental](./mindmap.jpg)
 
 ### **🔗 Interconexiones Clave Identificadas**
 
