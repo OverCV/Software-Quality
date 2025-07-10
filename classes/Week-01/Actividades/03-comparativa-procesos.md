@@ -18,7 +18,7 @@ El contraste entre CodeFast y QualiSoft ilustra cómo la madurez de los procesos
 
 **1. Deuda técnica y costos de falla en CodeFast:**
 La informalidad y falta de documentación en CodeFast generan una acumulación de deuda técnica: código duplicado, soluciones improvisadas y ausencia de estándares dificultan el mantenimiento y la evolución del software. La falta de pruebas automatizadas y revisiones formales permite que errores pasen a producción, generando costos de falla elevados (retrabajo, parches, insatisfacción del cliente). La presión por entregar rápido sacrifica la calidad, lo que a largo plazo incrementa el TCO, ya que el tiempo y recursos invertidos en corregir errores superan el supuesto ahorro inicial.
-
+    
 **2. Prácticas de QualiSoft que mitigan estos problemas:**
 QualiSoft adopta un proceso estructurado basado en modelos reconocidos (MoProSoft), con roles definidos y actividades documentadas. La gestión formal de requisitos y el control de cambios evitan malentendidos y retrabajo. El diseño arquitectónico y las revisiones de código aseguran coherencia y calidad interna. Las pruebas automatizadas y funcionales detectan defectos tempranamente, reduciendo el costo de corrección. La refactorización planificada y la medición de métricas clave permiten gestionar la deuda técnica de forma proactiva. Todo esto se traduce en software más confiable, mantenible y adaptable, con menor TCO.
 
