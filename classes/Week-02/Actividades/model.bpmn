@@ -1,79 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" 
-                  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" 
-                  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" 
-                  xmlns:di="http://www.omg.org/spec/DD/20100524/DI" 
-                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                  id="Definitions_Competisoft_PYMES" 
-                  targetNamespace="http://bpmn.io/schema/bpmn" 
-                  exporter="bpmn-js" 
-                  exporterVersion="8.0.0">
-
-  <!-- Collaboration: Define participants and message flows -->
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_Competisoft_PYMES_Complete" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="18.6.1">
   <bpmn:collaboration id="Collaboration_Competisoft">
-    <bpmn:participant id="Participant_AltaDireccion" name="Alta Dirección" processRef="Process_AltaDireccion" />
-    <bpmn:participant id="Participant_Gerencia" name="Gerencia" processRef="Process_Gerencia" />
-    <bpmn:participant id="Participant_Operativo" name="Operativo" processRef="Process_Operativo" />
-    <bpmn:participant id="Participant_PHVA" name="Ciclo PHVA" processRef="Process_PHVA" />
-    
-    <!-- Message flows between participants -->
-    <bpmn:messageFlow id="MessageFlow_AD_to_G" sourceRef="Task_PlanificacionEstrategica" targetRef="Task_GestionProcesos" />
-    <bpmn:messageFlow id="MessageFlow_G_to_O" sourceRef="Task_GestionProcesos" targetRef="Task_DesarrolloSW" />
-    <bpmn:messageFlow id="MessageFlow_O_to_G" sourceRef="Task_DesarrolloSW" targetRef="Task_GestionProyectos" />
-    <bpmn:messageFlow id="MessageFlow_G_to_AD" sourceRef="Task_GestionProyectos" targetRef="Task_GestionCartera" />
-    <bpmn:messageFlow id="MessageFlow_PHVA_to_AD" sourceRef="Task_Actuar" targetRef="Task_PlanificacionEstrategica" />
-    <bpmn:messageFlow id="MessageFlow_PHVA_to_G" sourceRef="Task_Actuar" targetRef="Task_GestionProcesos" />
-    <bpmn:messageFlow id="MessageFlow_PHVA_to_O" sourceRef="Task_Actuar" targetRef="Task_DesarrolloSW" />
+    <bpmn:participant id="Participant_AltaDireccion" name="Alta Dirección - Gestión de Negocio" processRef="Process_AltaDireccion" />
+    <bpmn:participant id="Participant_Gerencia" name="Gerencia - Coordinación Táctica" processRef="Process_Gerencia" />
+    <bpmn:participant id="Participant_Operativo" name="Operativo - Ejecución Técnica" processRef="Process_Operativo" />
+    <bpmn:participant id="Participant_PHVA" name="Ciclo PHVA - Mejora Continua" processRef="Process_PHVA" />
+    <bpmn:messageFlow id="MessageFlow_AD_to_G_Strategic" name="Directrices Estratégicas" sourceRef="Task_PlanificacionEstrategica" targetRef="Task_GestionProcesos" />
+    <bpmn:messageFlow id="MessageFlow_G_to_O_Processes" name="Procesos Definidos" sourceRef="Task_GestionProcesos" targetRef="Task_DesarrolloSW" />
+    <bpmn:messageFlow id="MessageFlow_O_to_G_Status" name="Estado del Desarrollo" sourceRef="Task_DesarrolloSW" targetRef="Task_GestionProyectos" />
+    <bpmn:messageFlow id="MessageFlow_G_to_AD_Reports" name="Reportes de Progreso" sourceRef="Task_GestionProyectos" targetRef="Task_GestionCartera" />
+    <bpmn:messageFlow id="MessageFlow_PHVA_to_AD" name="Mejoras Estratégicas" sourceRef="Task_Actuar" targetRef="Task_PlanificacionEstrategica" />
+    <bpmn:messageFlow id="MessageFlow_PHVA_to_G" name="Mejoras de Proceso" sourceRef="Task_Actuar" targetRef="Task_GestionProcesos" />
+    <bpmn:messageFlow id="MessageFlow_PHVA_to_O" name="Mejoras Operativas" sourceRef="Task_Actuar" targetRef="Task_DesarrolloSW" />
+    <bpmn:textAnnotation id="TextAnnotation_CompetisoftModel">
+      <bpmn:text>Modelo Competisoft para PYMEs - Marco de Proceso de Software Iberoamericano</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_Niveles">
+      <bpmn:text>Tres niveles organizacionales con procesos específicos para mejora continua</bpmn:text>
+    </bpmn:textAnnotation>
   </bpmn:collaboration>
-
-  <!-- Process: Alta Dirección -->
   <bpmn:process id="Process_AltaDireccion" isExecutable="false">
     <bpmn:laneSet id="LaneSet_AltaDireccion">
-      <bpmn:lane id="Lane_AltaDireccion" name="Gestión de Negocio">
-        <bpmn:flowNodeRef>StartEvent_AD</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_PlanificacionEstrategica</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_GestionRH</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_GestionBienes</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_GestionCartera</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_GestionConocimiento</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>EndEvent_AD</bpmn:flowNodeRef>
-      </bpmn:lane>
+      <bpmn:lane id="Lane_AltaDireccion" name="Gestión de Negocio" />
     </bpmn:laneSet>
-    
     <bpmn:startEvent id="StartEvent_AD" name="Inicio Dirección">
       <bpmn:outgoing>Flow_AD_1</bpmn:outgoing>
     </bpmn:startEvent>
-    
     <bpmn:task id="Task_PlanificacionEstrategica" name="A1.1 Planificación Estratégica">
       <bpmn:incoming>Flow_AD_1</bpmn:incoming>
       <bpmn:outgoing>Flow_AD_2</bpmn:outgoing>
     </bpmn:task>
-    
     <bpmn:task id="Task_GestionRH" name="A1.2 Gestión de Recursos Humanos">
       <bpmn:incoming>Flow_AD_2</bpmn:incoming>
       <bpmn:outgoing>Flow_AD_3</bpmn:outgoing>
     </bpmn:task>
-    
     <bpmn:task id="Task_GestionBienes" name="A1.3 Gestión de Bienes, Servicios e Infraestructura">
       <bpmn:incoming>Flow_AD_3</bpmn:incoming>
       <bpmn:outgoing>Flow_AD_4</bpmn:outgoing>
     </bpmn:task>
-    
     <bpmn:task id="Task_GestionCartera" name="A1.4 Gestión de Cartera de Proyectos">
       <bpmn:incoming>Flow_AD_4</bpmn:incoming>
       <bpmn:outgoing>Flow_AD_5</bpmn:outgoing>
     </bpmn:task>
-    
     <bpmn:task id="Task_GestionConocimiento" name="A1.5 Gestión del Conocimiento">
       <bpmn:incoming>Flow_AD_5</bpmn:incoming>
       <bpmn:outgoing>Flow_AD_6</bpmn:outgoing>
     </bpmn:task>
-    
     <bpmn:endEvent id="EndEvent_AD" name="Fin Dirección">
       <bpmn:incoming>Flow_AD_6</bpmn:incoming>
     </bpmn:endEvent>
-    
-    <!-- Sequence flows -->
     <bpmn:sequenceFlow id="Flow_AD_1" sourceRef="StartEvent_AD" targetRef="Task_PlanificacionEstrategica" />
     <bpmn:sequenceFlow id="Flow_AD_2" sourceRef="Task_PlanificacionEstrategica" targetRef="Task_GestionRH" />
     <bpmn:sequenceFlow id="Flow_AD_3" sourceRef="Task_GestionRH" targetRef="Task_GestionBienes" />
@@ -81,359 +56,363 @@
     <bpmn:sequenceFlow id="Flow_AD_5" sourceRef="Task_GestionCartera" targetRef="Task_GestionConocimiento" />
     <bpmn:sequenceFlow id="Flow_AD_6" sourceRef="Task_GestionConocimiento" targetRef="EndEvent_AD" />
   </bpmn:process>
-
-  <!-- Process: Gerencia -->
   <bpmn:process id="Process_Gerencia" isExecutable="false">
     <bpmn:laneSet id="LaneSet_Gerencia">
-      <bpmn:lane id="Lane_Gerencia" name="Nivel Gerencial">
-        <bpmn:flowNodeRef>StartEvent_G</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_GestionProcesos</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_GestionProyectos</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_GestionRecursos</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>EndEvent_G</bpmn:flowNodeRef>
-      </bpmn:lane>
+      <bpmn:lane id="Lane_Gerencia" name="Nivel Gerencial" />
     </bpmn:laneSet>
-    
     <bpmn:startEvent id="StartEvent_G" name="Inicio Gerencia">
       <bpmn:outgoing>Flow_G_1</bpmn:outgoing>
     </bpmn:startEvent>
-    
     <bpmn:task id="Task_GestionProcesos" name="A2.1 Gestión de Procesos">
       <bpmn:incoming>Flow_G_1</bpmn:incoming>
       <bpmn:outgoing>Flow_G_2</bpmn:outgoing>
     </bpmn:task>
-    
     <bpmn:task id="Task_GestionProyectos" name="A2.2 Gestión de Proyectos">
       <bpmn:incoming>Flow_G_2</bpmn:incoming>
       <bpmn:outgoing>Flow_G_3</bpmn:outgoing>
     </bpmn:task>
-    
     <bpmn:task id="Task_GestionRecursos" name="A2.3 Gestión de Recursos">
       <bpmn:incoming>Flow_G_3</bpmn:incoming>
       <bpmn:outgoing>Flow_G_4</bpmn:outgoing>
     </bpmn:task>
-    
     <bpmn:endEvent id="EndEvent_G" name="Fin Gerencia">
       <bpmn:incoming>Flow_G_4</bpmn:incoming>
     </bpmn:endEvent>
-    
-    <!-- Sequence flows -->
     <bpmn:sequenceFlow id="Flow_G_1" sourceRef="StartEvent_G" targetRef="Task_GestionProcesos" />
     <bpmn:sequenceFlow id="Flow_G_2" sourceRef="Task_GestionProcesos" targetRef="Task_GestionProyectos" />
     <bpmn:sequenceFlow id="Flow_G_3" sourceRef="Task_GestionProyectos" targetRef="Task_GestionRecursos" />
     <bpmn:sequenceFlow id="Flow_G_4" sourceRef="Task_GestionRecursos" targetRef="EndEvent_G" />
   </bpmn:process>
-
-  <!-- Process: Operativo -->
   <bpmn:process id="Process_Operativo" isExecutable="false">
     <bpmn:laneSet id="LaneSet_Operativo">
-      <bpmn:lane id="Lane_Operativo" name="Nivel Operativo">
-        <bpmn:flowNodeRef>StartEvent_O</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_DesarrolloSW</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_MantenimientoSW</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>EndEvent_O</bpmn:flowNodeRef>
-      </bpmn:lane>
+      <bpmn:lane id="Lane_Operativo" name="Nivel Operativo" />
     </bpmn:laneSet>
-    
     <bpmn:startEvent id="StartEvent_O" name="Inicio Operativo">
       <bpmn:outgoing>Flow_O_1</bpmn:outgoing>
     </bpmn:startEvent>
-    
     <bpmn:task id="Task_DesarrolloSW" name="A3.1 Desarrollo de Software">
       <bpmn:incoming>Flow_O_1</bpmn:incoming>
       <bpmn:outgoing>Flow_O_2</bpmn:outgoing>
     </bpmn:task>
-    
     <bpmn:task id="Task_MantenimientoSW" name="A3.2 Mantenimiento de Software">
       <bpmn:incoming>Flow_O_2</bpmn:incoming>
       <bpmn:outgoing>Flow_O_3</bpmn:outgoing>
     </bpmn:task>
-    
     <bpmn:endEvent id="EndEvent_O" name="Fin Operativo">
       <bpmn:incoming>Flow_O_3</bpmn:incoming>
     </bpmn:endEvent>
-    
-    <!-- Sequence flows -->
     <bpmn:sequenceFlow id="Flow_O_1" sourceRef="StartEvent_O" targetRef="Task_DesarrolloSW" />
     <bpmn:sequenceFlow id="Flow_O_2" sourceRef="Task_DesarrolloSW" targetRef="Task_MantenimientoSW" />
     <bpmn:sequenceFlow id="Flow_O_3" sourceRef="Task_MantenimientoSW" targetRef="EndEvent_O" />
   </bpmn:process>
-
-  <!-- Process: Ciclo PHVA -->
   <bpmn:process id="Process_PHVA" isExecutable="false">
     <bpmn:laneSet id="LaneSet_PHVA">
-      <bpmn:lane id="Lane_PHVA" name="Mejora Continua">
-        <bpmn:flowNodeRef>StartEvent_PHVA</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_Planificar</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_Hacer</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_Verificar</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_Actuar</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Gateway_PHVA</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>EndEvent_PHVA</bpmn:flowNodeRef>
-      </bpmn:lane>
+      <bpmn:lane id="Lane_PHVA" name="Mejora Continua" />
     </bpmn:laneSet>
-    
     <bpmn:startEvent id="StartEvent_PHVA" name="Inicio PHVA">
       <bpmn:outgoing>Flow_PHVA_1</bpmn:outgoing>
     </bpmn:startEvent>
-    
-    <bpmn:task id="Task_Planificar" name="Planificar">
+    <bpmn:task id="Task_Planificar" name="Planificar - Instalación y Diagnóstico">
       <bpmn:incoming>Flow_PHVA_1</bpmn:incoming>
       <bpmn:incoming>Flow_PHVA_6</bpmn:incoming>
       <bpmn:outgoing>Flow_PHVA_2</bpmn:outgoing>
     </bpmn:task>
-    
-    <bpmn:task id="Task_Hacer" name="Hacer">
+    <bpmn:task id="Task_Hacer" name="Hacer - Formulación y Ejecución">
       <bpmn:incoming>Flow_PHVA_2</bpmn:incoming>
       <bpmn:outgoing>Flow_PHVA_3</bpmn:outgoing>
     </bpmn:task>
-    
-    <bpmn:task id="Task_Verificar" name="Verificar">
+    <bpmn:task id="Task_Verificar" name="Verificar - Monitoreo y Control">
       <bpmn:incoming>Flow_PHVA_3</bpmn:incoming>
       <bpmn:outgoing>Flow_PHVA_4</bpmn:outgoing>
     </bpmn:task>
-    
-    <bpmn:task id="Task_Actuar" name="Actuar">
+    <bpmn:task id="Task_Actuar" name="Actuar - Revisión del Ciclo">
       <bpmn:incoming>Flow_PHVA_4</bpmn:incoming>
       <bpmn:outgoing>Flow_PHVA_5</bpmn:outgoing>
     </bpmn:task>
-    
-    <bpmn:exclusiveGateway id="Gateway_PHVA" name="¿Continuar ciclo?">
+    <bpmn:exclusiveGateway id="Gateway_PHVA" name="¿Mejoras efectivas?">
       <bpmn:incoming>Flow_PHVA_5</bpmn:incoming>
       <bpmn:outgoing>Flow_PHVA_6</bpmn:outgoing>
       <bpmn:outgoing>Flow_PHVA_7</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    
     <bpmn:endEvent id="EndEvent_PHVA" name="Fin PHVA">
       <bpmn:incoming>Flow_PHVA_7</bpmn:incoming>
     </bpmn:endEvent>
-    
-    <!-- Sequence flows -->
     <bpmn:sequenceFlow id="Flow_PHVA_1" sourceRef="StartEvent_PHVA" targetRef="Task_Planificar" />
+    <bpmn:sequenceFlow id="Flow_PHVA_6" name="Sí - Continuar mejora" sourceRef="Gateway_PHVA" targetRef="Task_Planificar" />
     <bpmn:sequenceFlow id="Flow_PHVA_2" sourceRef="Task_Planificar" targetRef="Task_Hacer" />
     <bpmn:sequenceFlow id="Flow_PHVA_3" sourceRef="Task_Hacer" targetRef="Task_Verificar" />
     <bpmn:sequenceFlow id="Flow_PHVA_4" sourceRef="Task_Verificar" targetRef="Task_Actuar" />
     <bpmn:sequenceFlow id="Flow_PHVA_5" sourceRef="Task_Actuar" targetRef="Gateway_PHVA" />
-    <bpmn:sequenceFlow id="Flow_PHVA_6" name="Sí" sourceRef="Gateway_PHVA" targetRef="Task_Planificar" />
-    <bpmn:sequenceFlow id="Flow_PHVA_7" name="No" sourceRef="Gateway_PHVA" targetRef="EndEvent_PHVA" />
+    <bpmn:sequenceFlow id="Flow_PHVA_7" name="No - Finalizar ciclo" sourceRef="Gateway_PHVA" targetRef="EndEvent_PHVA" />
   </bpmn:process>
-
-  <!-- BPMN DI (Diagram Interchange) -->
   <bpmndi:BPMNDiagram id="BPMNDiagram_Competisoft">
     <bpmndi:BPMNPlane id="BPMNPlane_Competisoft" bpmnElement="Collaboration_Competisoft">
-      
-      <!-- Alta Dirección Pool -->
       <bpmndi:BPMNShape id="Participant_AltaDireccion_di" bpmnElement="Participant_AltaDireccion" isHorizontal="true">
-        <dc:Bounds x="129" y="80" width="1200" height="150" />
+        <dc:Bounds x="160" y="80" width="1249" height="150" />
       </bpmndi:BPMNShape>
-      
-      <!-- Gerencia Pool -->
-      <bpmndi:BPMNShape id="Participant_Gerencia_di" bpmnElement="Participant_Gerencia" isHorizontal="true">
-        <dc:Bounds x="129" y="280" width="1200" height="150" />
-      </bpmndi:BPMNShape>
-      
-      <!-- Operativo Pool -->
-      <bpmndi:BPMNShape id="Participant_Operativo_di" bpmnElement="Participant_Operativo" isHorizontal="true">
-        <dc:Bounds x="129" y="480" width="1200" height="150" />
-      </bpmndi:BPMNShape>
-      
-      <!-- PHVA Pool -->
-      <bpmndi:BPMNShape id="Participant_PHVA_di" bpmnElement="Participant_PHVA" isHorizontal="true">
-        <dc:Bounds x="129" y="680" width="1200" height="200" />
-      </bpmndi:BPMNShape>
-      
-      <!-- ===== Shapes for Alta Dirección ===== -->
       <bpmndi:BPMNShape id="StartEvent_AD_di" bpmnElement="StartEvent_AD">
-        <dc:Bounds x="150" y="120" width="36" height="36" />
+        <dc:Bounds x="230" y="120" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="211" y="156" width="75" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_PlanificacionEstrategica_di" bpmnElement="Task_PlanificacionEstrategica">
-        <dc:Bounds x="220" y="100" width="120" height="80" />
+        <dc:Bounds x="300" y="100" width="120" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_GestionRH_di" bpmnElement="Task_GestionRH">
-        <dc:Bounds x="360" y="100" width="120" height="80" />
+        <dc:Bounds x="440" y="100" width="120" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_GestionBienes_di" bpmnElement="Task_GestionBienes">
-        <dc:Bounds x="500" y="100" width="120" height="80" />
+        <dc:Bounds x="580" y="100" width="120" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_GestionCartera_di" bpmnElement="Task_GestionCartera">
-        <dc:Bounds x="640" y="100" width="120" height="80" />
+        <dc:Bounds x="720" y="100" width="120" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_GestionConocimiento_di" bpmnElement="Task_GestionConocimiento">
-        <dc:Bounds x="780" y="100" width="120" height="80" />
+        <dc:Bounds x="860" y="100" width="120" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_AD_di" bpmnElement="EndEvent_AD">
-        <dc:Bounds x="930" y="120" width="36" height="36" />
+        <dc:Bounds x="1010" y="120" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="996" y="156" width="65" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-
-      <!-- ===== Shapes for Gerencia ===== -->
+      <bpmndi:BPMNEdge id="Flow_AD_1_di" bpmnElement="Flow_AD_1">
+        <di:waypoint x="266" y="138" />
+        <di:waypoint x="300" y="140" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_AD_2_di" bpmnElement="Flow_AD_2">
+        <di:waypoint x="420" y="140" />
+        <di:waypoint x="440" y="140" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_AD_3_di" bpmnElement="Flow_AD_3">
+        <di:waypoint x="560" y="140" />
+        <di:waypoint x="580" y="140" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_AD_4_di" bpmnElement="Flow_AD_4">
+        <di:waypoint x="700" y="140" />
+        <di:waypoint x="720" y="140" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_AD_5_di" bpmnElement="Flow_AD_5">
+        <di:waypoint x="840" y="140" />
+        <di:waypoint x="860" y="140" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_AD_6_di" bpmnElement="Flow_AD_6">
+        <di:waypoint x="980" y="140" />
+        <di:waypoint x="1010" y="138" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Participant_Gerencia_di" bpmnElement="Participant_Gerencia" isHorizontal="true">
+        <dc:Bounds x="160" y="280" width="1249" height="150" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="StartEvent_G_di" bpmnElement="StartEvent_G">
-        <dc:Bounds x="150" y="320" width="36" height="36" />
+        <dc:Bounds x="230" y="320" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="211" y="356" width="74" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_GestionProcesos_di" bpmnElement="Task_GestionProcesos">
-        <dc:Bounds x="220" y="300" width="120" height="80" />
+        <dc:Bounds x="300" y="300" width="120" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_GestionProyectos_di" bpmnElement="Task_GestionProyectos">
-        <dc:Bounds x="360" y="300" width="120" height="80" />
+        <dc:Bounds x="440" y="300" width="120" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_GestionRecursos_di" bpmnElement="Task_GestionRecursos">
-        <dc:Bounds x="500" y="300" width="120" height="80" />
+        <dc:Bounds x="580" y="300" width="120" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_G_di" bpmnElement="EndEvent_G">
-        <dc:Bounds x="650" y="320" width="36" height="36" />
+        <dc:Bounds x="730" y="320" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="717" y="356" width="63" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-
-      <!-- ===== Shapes for Operativo ===== -->
+      <bpmndi:BPMNEdge id="Flow_G_1_di" bpmnElement="Flow_G_1">
+        <di:waypoint x="266" y="338" />
+        <di:waypoint x="300" y="340" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_G_2_di" bpmnElement="Flow_G_2">
+        <di:waypoint x="420" y="340" />
+        <di:waypoint x="440" y="340" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_G_3_di" bpmnElement="Flow_G_3">
+        <di:waypoint x="560" y="340" />
+        <di:waypoint x="580" y="340" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_G_4_di" bpmnElement="Flow_G_4">
+        <di:waypoint x="700" y="340" />
+        <di:waypoint x="730" y="338" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Participant_Operativo_di" bpmnElement="Participant_Operativo" isHorizontal="true">
+        <dc:Bounds x="160" y="480" width="1249" height="150" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="StartEvent_O_di" bpmnElement="StartEvent_O">
-        <dc:Bounds x="150" y="520" width="36" height="36" />
+        <dc:Bounds x="230" y="520" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="210" y="556" width="77" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_DesarrolloSW_di" bpmnElement="Task_DesarrolloSW">
-        <dc:Bounds x="220" y="500" width="120" height="80" />
+        <dc:Bounds x="300" y="500" width="120" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_MantenimientoSW_di" bpmnElement="Task_MantenimientoSW">
-        <dc:Bounds x="360" y="500" width="120" height="80" />
+        <dc:Bounds x="440" y="500" width="120" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_O_di" bpmnElement="EndEvent_O">
-        <dc:Bounds x="500" y="520" width="36" height="36" />
+        <dc:Bounds x="580" y="520" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="565" y="556" width="67" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-
-      <!-- ===== Shapes for PHVA ===== -->
+      <bpmndi:BPMNEdge id="Flow_O_1_di" bpmnElement="Flow_O_1">
+        <di:waypoint x="266" y="538" />
+        <di:waypoint x="300" y="540" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_O_2_di" bpmnElement="Flow_O_2">
+        <di:waypoint x="420" y="540" />
+        <di:waypoint x="440" y="540" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_O_3_di" bpmnElement="Flow_O_3">
+        <di:waypoint x="560" y="540" />
+        <di:waypoint x="580" y="538" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Participant_PHVA_di" bpmnElement="Participant_PHVA" isHorizontal="true">
+        <dc:Bounds x="169" y="680" width="1240" height="200" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="StartEvent_PHVA_di" bpmnElement="StartEvent_PHVA">
-        <dc:Bounds x="150" y="740" width="36" height="36" />
+        <dc:Bounds x="230" y="740" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="219" y="783" width="59" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_Planificar_di" bpmnElement="Task_Planificar">
-        <dc:Bounds x="220" y="720" width="120" height="80" />
+        <dc:Bounds x="300" y="720" width="120" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="305" y="735" width="110" height="40" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_Hacer_di" bpmnElement="Task_Hacer">
-        <dc:Bounds x="360" y="720" width="120" height="80" />
+        <dc:Bounds x="460" y="720" width="120" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="465" y="735" width="110" height="40" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_Verificar_di" bpmnElement="Task_Verificar">
-        <dc:Bounds x="500" y="720" width="120" height="80" />
+        <dc:Bounds x="620" y="720" width="120" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="625" y="735" width="110" height="40" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_Actuar_di" bpmnElement="Task_Actuar">
-        <dc:Bounds x="640" y="720" width="120" height="80" />
+        <dc:Bounds x="780" y="720" width="120" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="785" y="735" width="110" height="40" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_PHVA_di" bpmnElement="Gateway_PHVA" isMarkerVisible="true">
-        <dc:Bounds x="780" y="740" width="50" height="50" />
+        <dc:Bounds x="945" y="735" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="975" y="705" width="50" height="27" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_PHVA_di" bpmnElement="EndEvent_PHVA">
-        <dc:Bounds x="860" y="740" width="36" height="36" />
+        <dc:Bounds x="1030" y="742" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1024" y="785" width="49" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-
+      <bpmndi:BPMNEdge id="Flow_PHVA_1_di" bpmnElement="Flow_PHVA_1">
+        <di:waypoint x="266" y="758" />
+        <di:waypoint x="300" y="760" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_PHVA_2_di" bpmnElement="Flow_PHVA_2">
+        <di:waypoint x="420" y="760" />
+        <di:waypoint x="460" y="760" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_PHVA_3_di" bpmnElement="Flow_PHVA_3">
+        <di:waypoint x="580" y="760" />
+        <di:waypoint x="620" y="760" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_PHVA_4_di" bpmnElement="Flow_PHVA_4">
+        <di:waypoint x="740" y="760" />
+        <di:waypoint x="780" y="760" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_PHVA_5_di" bpmnElement="Flow_PHVA_5">
+        <di:waypoint x="900" y="760" />
+        <di:waypoint x="945" y="760" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_PHVA_6_di" bpmnElement="Flow_PHVA_6">
+        <di:waypoint x="970" y="735" />
+        <di:waypoint x="970" y="650" />
+        <di:waypoint x="360" y="650" />
+        <di:waypoint x="360" y="720" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="654" y="650" width="87" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_PHVA_7_di" bpmnElement="Flow_PHVA_7">
+        <di:waypoint x="995" y="760" />
+        <di:waypoint x="1030" y="760" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1063" y="740" width="74" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_AD_G_Strategic_di" bpmnElement="MessageFlow_AD_to_G_Strategic">
+        <di:waypoint x="420" y="180" />
+        <di:waypoint x="420" y="300" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="429" y="186" width="62" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_G_O_Processes_di" bpmnElement="MessageFlow_G_to_O_Processes">
+        <di:waypoint x="360" y="380" />
+        <di:waypoint x="360" y="500" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="306" y="436" width="47" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_O_G_Status_di" bpmnElement="MessageFlow_O_to_G_Status">
+        <di:waypoint x="419" y="506" />
+        <di:waypoint x="460" y="470" />
+        <di:waypoint x="474" y="380" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="482" y="402" width="53" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_G_AD_Reports_di" bpmnElement="MessageFlow_G_to_AD_Reports">
+        <di:waypoint x="500" y="300" />
+        <di:waypoint x="500" y="270" />
+        <di:waypoint x="780" y="270" />
+        <di:waypoint x="780" y="180" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="790" y="196" width="60" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_PHVA_AD_di" bpmnElement="MessageFlow_PHVA_to_AD">
+        <di:waypoint x="876" y="720" />
+        <di:waypoint x="876" y="250" />
+        <di:waypoint x="324" y="250" />
+        <di:waypoint x="324" y="180" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="879" y="516" width="62" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_PHVA_G_di" bpmnElement="MessageFlow_PHVA_to_G">
+        <di:waypoint x="840" y="720" />
+        <di:waypoint x="840" y="450" />
+        <di:waypoint x="430" y="450" />
+        <di:waypoint x="400" y="380" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="781" y="566" width="55" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_PHVA_O_di" bpmnElement="MessageFlow_PHVA_to_O">
+        <di:waypoint x="800" y="720" />
+        <di:waypoint x="790" y="700" />
+        <di:waypoint x="400" y="700" />
+        <di:waypoint x="360" y="580" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="383" y="596" width="54" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
-
-  <!-- BPMN Edge Definitions -->
-  <bpmndi:BPMNEdge id="Flow_AD_1_di" bpmnElement="Flow_AD_1">
-    <di:waypoint x="186" y="138" />
-    <di:waypoint x="220" y="140" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="Flow_AD_2_di" bpmnElement="Flow_AD_2">
-    <di:waypoint x="340" y="140" />
-    <di:waypoint x="360" y="140" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="Flow_AD_3_di" bpmnElement="Flow_AD_3">
-    <di:waypoint x="480" y="140" />
-    <di:waypoint x="500" y="140" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="Flow_AD_4_di" bpmnElement="Flow_AD_4">
-    <di:waypoint x="620" y="140" />
-    <di:waypoint x="640" y="140" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="Flow_AD_5_di" bpmnElement="Flow_AD_5">
-    <di:waypoint x="760" y="140" />
-    <di:waypoint x="780" y="140" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="Flow_AD_6_di" bpmnElement="Flow_AD_6">
-    <di:waypoint x="900" y="140" />
-    <di:waypoint x="930" y="138" />
-  </bpmndi:BPMNEdge>
-
-  <bpmndi:BPMNEdge id="Flow_G_1_di" bpmnElement="Flow_G_1">
-    <di:waypoint x="186" y="338" />
-    <di:waypoint x="220" y="340" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="Flow_G_2_di" bpmnElement="Flow_G_2">
-    <di:waypoint x="340" y="340" />
-    <di:waypoint x="360" y="340" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="Flow_G_3_di" bpmnElement="Flow_G_3">
-    <di:waypoint x="480" y="340" />
-    <di:waypoint x="500" y="340" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="Flow_G_4_di" bpmnElement="Flow_G_4">
-    <di:waypoint x="620" y="340" />
-    <di:waypoint x="650" y="338" />
-  </bpmndi:BPMNEdge>
-
-  <bpmndi:BPMNEdge id="Flow_O_1_di" bpmnElement="Flow_O_1">
-    <di:waypoint x="186" y="538" />
-    <di:waypoint x="220" y="540" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="Flow_O_2_di" bpmnElement="Flow_O_2">
-    <di:waypoint x="340" y="540" />
-    <di:waypoint x="360" y="540" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="Flow_O_3_di" bpmnElement="Flow_O_3">
-    <di:waypoint x="480" y="540" />
-    <di:waypoint x="500" y="538" />
-  </bpmndi:BPMNEdge>
-
-  <bpmndi:BPMNEdge id="Flow_PHVA_1_di" bpmnElement="Flow_PHVA_1">
-    <di:waypoint x="186" y="758" />
-    <di:waypoint x="220" y="760" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="Flow_PHVA_2_di" bpmnElement="Flow_PHVA_2">
-    <di:waypoint x="340" y="760" />
-    <di:waypoint x="360" y="760" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="Flow_PHVA_3_di" bpmnElement="Flow_PHVA_3">
-    <di:waypoint x="480" y="760" />
-    <di:waypoint x="500" y="760" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="Flow_PHVA_4_di" bpmnElement="Flow_PHVA_4">
-    <di:waypoint x="620" y="760" />
-    <di:waypoint x="640" y="760" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="Flow_PHVA_5_di" bpmnElement="Flow_PHVA_5">
-    <di:waypoint x="760" y="760" />
-    <di:waypoint x="780" y="765" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="Flow_PHVA_6_di" bpmnElement="Flow_PHVA_6">
-    <di:waypoint x="805" y="765" />
-    <di:waypoint x="220" y="760" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="Flow_PHVA_7_di" bpmnElement="Flow_PHVA_7">
-    <di:waypoint x="805" y="765" />
-    <di:waypoint x="860" y="758" />
-  </bpmndi:BPMNEdge>
-
-  <bpmndi:BPMNEdge id="MessageFlow_AD_G_di" bpmnElement="MessageFlow_AD_to_G">
-    <di:waypoint x="340" y="180" />
-    <di:waypoint x="340" y="300" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="MessageFlow_G_O_di" bpmnElement="MessageFlow_G_to_O">
-    <di:waypoint x="480" y="380" />
-    <di:waypoint x="480" y="500" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="MessageFlow_O_G_di" bpmnElement="MessageFlow_O_to_G">
-    <di:waypoint x="280" y="580" />
-    <di:waypoint x="280" y="300" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="MessageFlow_G_AD_di" bpmnElement="MessageFlow_G_to_AD">
-    <di:waypoint x="420" y="300" />
-    <di:waypoint x="640" y="180" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="MessageFlow_PHVA_AD_di" bpmnElement="MessageFlow_PHVA_to_AD">
-    <di:waypoint x="700" y="720" />
-    <di:waypoint x="340" y="180" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="MessageFlow_PHVA_G_di" bpmnElement="MessageFlow_PHVA_to_G">
-    <di:waypoint x="700" y="720" />
-    <di:waypoint x="340" y="300" />
-  </bpmndi:BPMNEdge>
-  <bpmndi:BPMNEdge id="MessageFlow_PHVA_O_di" bpmnElement="MessageFlow_PHVA_to_O">
-    <di:waypoint x="700" y="720" />
-    <di:waypoint x="280" y="500" />
-  </bpmndi:BPMNEdge>
-
 </bpmn:definitions>
