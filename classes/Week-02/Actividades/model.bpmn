@@ -322,4 +322,118 @@
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 
+  <!-- BPMN Edge Definitions -->
+  <bpmndi:BPMNEdge id="Flow_AD_1_di" bpmnElement="Flow_AD_1">
+    <di:waypoint x="186" y="138" />
+    <di:waypoint x="220" y="140" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="Flow_AD_2_di" bpmnElement="Flow_AD_2">
+    <di:waypoint x="340" y="140" />
+    <di:waypoint x="360" y="140" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="Flow_AD_3_di" bpmnElement="Flow_AD_3">
+    <di:waypoint x="480" y="140" />
+    <di:waypoint x="500" y="140" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="Flow_AD_4_di" bpmnElement="Flow_AD_4">
+    <di:waypoint x="620" y="140" />
+    <di:waypoint x="640" y="140" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="Flow_AD_5_di" bpmnElement="Flow_AD_5">
+    <di:waypoint x="760" y="140" />
+    <di:waypoint x="780" y="140" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="Flow_AD_6_di" bpmnElement="Flow_AD_6">
+    <di:waypoint x="900" y="140" />
+    <di:waypoint x="930" y="138" />
+  </bpmndi:BPMNEdge>
+
+  <bpmndi:BPMNEdge id="Flow_G_1_di" bpmnElement="Flow_G_1">
+    <di:waypoint x="186" y="338" />
+    <di:waypoint x="220" y="340" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="Flow_G_2_di" bpmnElement="Flow_G_2">
+    <di:waypoint x="340" y="340" />
+    <di:waypoint x="360" y="340" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="Flow_G_3_di" bpmnElement="Flow_G_3">
+    <di:waypoint x="480" y="340" />
+    <di:waypoint x="500" y="340" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="Flow_G_4_di" bpmnElement="Flow_G_4">
+    <di:waypoint x="620" y="340" />
+    <di:waypoint x="650" y="338" />
+  </bpmndi:BPMNEdge>
+
+  <bpmndi:BPMNEdge id="Flow_O_1_di" bpmnElement="Flow_O_1">
+    <di:waypoint x="186" y="538" />
+    <di:waypoint x="220" y="540" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="Flow_O_2_di" bpmnElement="Flow_O_2">
+    <di:waypoint x="340" y="540" />
+    <di:waypoint x="360" y="540" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="Flow_O_3_di" bpmnElement="Flow_O_3">
+    <di:waypoint x="480" y="540" />
+    <di:waypoint x="500" y="538" />
+  </bpmndi:BPMNEdge>
+
+  <bpmndi:BPMNEdge id="Flow_PHVA_1_di" bpmnElement="Flow_PHVA_1">
+    <di:waypoint x="186" y="758" />
+    <di:waypoint x="220" y="760" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="Flow_PHVA_2_di" bpmnElement="Flow_PHVA_2">
+    <di:waypoint x="340" y="760" />
+    <di:waypoint x="360" y="760" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="Flow_PHVA_3_di" bpmnElement="Flow_PHVA_3">
+    <di:waypoint x="480" y="760" />
+    <di:waypoint x="500" y="760" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="Flow_PHVA_4_di" bpmnElement="Flow_PHVA_4">
+    <di:waypoint x="620" y="760" />
+    <di:waypoint x="640" y="760" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="Flow_PHVA_5_di" bpmnElement="Flow_PHVA_5">
+    <di:waypoint x="760" y="760" />
+    <di:waypoint x="780" y="765" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="Flow_PHVA_6_di" bpmnElement="Flow_PHVA_6">
+    <di:waypoint x="805" y="765" />
+    <di:waypoint x="220" y="760" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="Flow_PHVA_7_di" bpmnElement="Flow_PHVA_7">
+    <di:waypoint x="805" y="765" />
+    <di:waypoint x="860" y="758" />
+  </bpmndi:BPMNEdge>
+
+  <bpmndi:BPMNEdge id="MessageFlow_AD_G_di" bpmnElement="MessageFlow_AD_to_G">
+    <di:waypoint x="340" y="180" />
+    <di:waypoint x="340" y="300" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="MessageFlow_G_O_di" bpmnElement="MessageFlow_G_to_O">
+    <di:waypoint x="480" y="380" />
+    <di:waypoint x="480" y="500" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="MessageFlow_O_G_di" bpmnElement="MessageFlow_O_to_G">
+    <di:waypoint x="280" y="580" />
+    <di:waypoint x="280" y="300" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="MessageFlow_G_AD_di" bpmnElement="MessageFlow_G_to_AD">
+    <di:waypoint x="420" y="300" />
+    <di:waypoint x="640" y="180" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="MessageFlow_PHVA_AD_di" bpmnElement="MessageFlow_PHVA_to_AD">
+    <di:waypoint x="700" y="720" />
+    <di:waypoint x="340" y="180" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="MessageFlow_PHVA_G_di" bpmnElement="MessageFlow_PHVA_to_G">
+    <di:waypoint x="700" y="720" />
+    <di:waypoint x="340" y="300" />
+  </bpmndi:BPMNEdge>
+  <bpmndi:BPMNEdge id="MessageFlow_PHVA_O_di" bpmnElement="MessageFlow_PHVA_to_O">
+    <di:waypoint x="700" y="720" />
+    <di:waypoint x="280" y="500" />
+  </bpmndi:BPMNEdge>
+
 </bpmn:definitions>
