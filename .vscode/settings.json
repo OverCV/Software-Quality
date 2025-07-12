@@ -1,0 +1,25 @@
+{
+    // Python configuration
+    "python.terminal.activateEnvironment": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    // Archivos de entorno
+    "python.envFile": "./project/.env",
+    // File associations
+    "files.associations": {
+        "langgraph.json": "json",
+    },
+    // Terminal configuration
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.cwd": "./project",
+    // Exclude patterns for file search
+    "files.exclude": {
+        "**/node_modules": true,
+    },
+    // Language-specific settings
+    "[json]": {
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2
+    },
+    // Para que el terminal abra en la carpeta correcta
+    "python.terminal.executeInFileDir": true
+}
