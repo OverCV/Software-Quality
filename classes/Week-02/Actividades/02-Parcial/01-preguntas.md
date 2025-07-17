@@ -63,7 +63,7 @@ Basándose en su análisis, determinen:
 | "Reconciliación: proceso manual, consume recursos significativos" | Gestión de Procesos | A2 | **Media** |
 | "Zero-bug tolerance: cada bug puede costar millones" | Desarrollo de Software | A3 | **Media** |
 
-## PASO 4: DISEÑO DEL PLAN DE IMPLEMENTACIÓN 
+## PASO 4: DISEÑO DEL PLAN DE IMPLEMENTACIÓN
 
 ### 4.1 Secuencia de Implementación:
 
@@ -149,7 +149,7 @@ Basándose en su análisis, determinen:
 
 ### Costos Estimados (Conservador):
 - **Fase 1 (Compliance):** $80M COP (herramientas) + $120M COP (tiempo 3 FTE × 3 meses)
-- **Fase 2 (Recursos):** $40M COP (herramientas IaC) + $90M COP (tiempo 3 FTE × 3 meses)  
+- **Fase 2 (Recursos):** $40M COP (herramientas IaC) + $90M COP (tiempo 3 FTE × 3 meses)
 - **Fase 3 (Mantenimiento):** $60M COP (herramientas AI) + $120M COP (tiempo 4 FTE × 3 meses)
 - **Total:** $510M COP (dentro del presupuesto disponible $650M COP)
 
@@ -173,7 +173,7 @@ Basándose en su análisis, determinen:
 
 1. **Dato específico del caso:** "$50M COP pérdida por minuto de downtime"
    - Solo evitando 1 hora de downtime al año ya justifica 6× la inversión completa
-   
+
 2. **Escala de operación:** "$80 billones COP/mes en transacciones"
    - Pequeñas mejoras de eficiencia generan ahorros masivos por la escala
 
