@@ -5,54 +5,88 @@ const supabaseTyped = supabase as any;
 
 export const getAnalytics = async (): Promise<Analytics> => {
   try {
-    // Get all professors with their data
-    const { data: professorsData, error: professorsError } = await supabaseTyped
+    // Fetch all professor IDs
+    const { data: professors, error: profError } = await supabaseTyped
       .from('professors')
-      .select(`
-        id,
-        professor_versions (
-          name,
-          department,
-          image_url,
-          vote_count,
-          author_id
-        ),
-        courses (
-          id,
-          course_versions (
-            id,
-            vote_count
-          ),
-          reviews (
-            personal_rating,
-            teaching_rating
-          )
-        )
-      `);
+      .select('id');
 
-    if (professorsError) {
-      console.error('Error fetching analytics data:', professorsError);
-      return getEmptyAnalytics();
-    }
+    if (profError) throw profError;
 
-    if (!professorsData) return getEmptyAnalytics();
+    const professorIds = professors?.map(p => p.id) || [];
 
-    // Get user profiles for author names
-    const userIds = new Set<string>();
-    professorsData.forEach(professor => {
-      professor.professor_versions?.forEach(version => {
-        if (version.author_id) userIds.add(version.author_id);
-      });
+    if (professorIds.length === 0) return getEmptyAnalytics();
+
+    // Fetch all professor versions
+    const { data: profVersions, error: profVerError } = await supabaseTyped
+      .from('professor_versions')
+      .select('id, professor_id, name, department, image_url, vote_count, author_id')
+      .in('professor_id', professorIds);
+
+    if (profVerError) throw profVerError;
+
+    // Group versions by professor_id and find most voted
+    const mostVotedByProf = new Map<string, any>();
+    const versionsByProf = new Map<string, any[]>();
+    profVersions?.forEach(v => {
+      if (!versionsByProf.has(v.professor_id)) versionsByProf.set(v.professor_id, []);
+      versionsByProf.get(v.professor_id)!.push(v);
     });
+    professorIds.forEach(profId => {
+      const vers = versionsByProf.get(profId) || [];
+      const mostVoted = vers.sort((a, b) => (b.vote_count || 0) - (a.vote_count || 0))[0];
+      if (mostVoted) mostVotedByProf.set(profId, mostVoted);
+    });
+
+    // Fetch all courses for these professors
+    const { data: coursesData, error: coursesError } = await supabaseTyped
+      .from('courses')
+      .select('id, professor_id')
+      .in('professor_id', professorIds);
+
+    if (coursesError) throw coursesError;
+
+    const courseIds = coursesData?.map(c => c.id) || [];
+
+    // Group courses by professor_id
+    const coursesByProf = new Map<string, any[]>();
+    coursesData?.forEach(c => {
+      if (!coursesByProf.has(c.professor_id)) coursesByProf.set(c.professor_id, []);
+      coursesByProf.get(c.professor_id)!.push(c);
+    });
+
+    // Fetch all course versions (only need vote_count for most voted, but we'll get all for consistency)
+    const { data: courseVersions, error: cvError } = await supabaseTyped
+      .from('course_versions')
+      .select('id, course_id, vote_count')
+      .in('course_id', courseIds);
+
+    if (cvError) throw cvError;
+
+    // Fetch all reviews
+    const { data: reviewsData, error: revError } = await supabaseTyped
+      .from('reviews')
+      .select('id, course_id, personal_rating, teaching_rating')
+      .in('course_id', courseIds);
+
+    if (revError) throw revError;
+
+    // Group reviews by course_id
+    const revByCourse = new Map<string, any[]>();
+    reviewsData?.forEach(r => {
+      if (!revByCourse.has(r.course_id)) revByCourse.set(r.course_id, []);
+      revByCourse.get(r.course_id)!.push(r);
+    });
+
+    // Collect author IDs for profiles
+    const userIds = new Set<string>();
+    profVersions?.forEach(v => { if (v.author_id) userIds.add(v.author_id); });
 
     const { data: profiles } = await supabaseTyped
       .from('profiles')
       .select('user_id, display_name')
       .in('user_id', Array.from(userIds));
 
-    const profileMap = new Map(
-      profiles?.map(profile => [profile.user_id, profile.display_name]) || []
-    );
+    const profileMap = new Map(profiles?.map(profile => [profile.user_id, profile.display_name]) || []);
 
     // Process data
     const processedProfessors: Professor[] = [];
@@ -62,14 +96,16 @@ export const getAnalytics = async (): Promise<Analytics> => {
     let totalTeachingRating = 0;
     let totalCourses = 0;
 
-    professorsData.forEach(professor => {
-      const mostVotedVersion = professor.professor_versions
-        ?.sort((a, b) => (b.vote_count || 0) - (a.vote_count || 0))[0];
-
+    professorIds.forEach(profId => {
+      const mostVotedVersion = mostVotedByProf.get(profId);
       if (!mostVotedVersion) return;
 
-      // Calculate ratings from all reviews for this professor
-      const allReviews = professor.courses?.flatMap(course => course.reviews || []) || [];
+      // Get courses for this professor
+      const profCourses = coursesByProf.get(profId) || [];
+
+      // Get all reviews for these courses
+      const allReviews = profCourses.flatMap(course => revByCourse.get(course.id) || []);
+
       const professorPersonalRating = allReviews.length > 0 
         ? allReviews.reduce((sum, r) => sum + r.personal_rating, 0) / allReviews.length 
         : 0;
@@ -80,7 +116,7 @@ export const getAnalytics = async (): Promise<Analytics> => {
       totalReviews += allReviews.length;
       totalPersonalRating += professorPersonalRating * allReviews.length;
       totalTeachingRating += professorTeachingRating * allReviews.length;
-      totalCourses += professor.courses?.length || 0;
+      totalCourses += profCourses.length;
 
       // Update department stats
       const dept = mostVotedVersion.department;
@@ -93,7 +129,6 @@ export const getAnalytics = async (): Promise<Analytics> => {
           totalReviews: 0
         });
       }
-
       const deptStats = departmentMap.get(dept)!;
       deptStats.professorCount++;
       deptStats.totalReviews += allReviews.length;
@@ -101,10 +136,10 @@ export const getAnalytics = async (): Promise<Analytics> => {
       deptStats.avgTeachingRating += professorTeachingRating;
 
       processedProfessors.push({
-        id: professor.id,
+        id: profId,
         name: mostVotedVersion.name,
         department: mostVotedVersion.department,
-        email: '', // Not needed for analytics
+        email: '',
         phone: '',
         office: '',
         bio: '',
@@ -112,7 +147,7 @@ export const getAnalytics = async (): Promise<Analytics> => {
         personalRating: professorPersonalRating,
         teachingRating: professorTeachingRating,
         totalReviews: allReviews.length,
-        authorName: (profileMap.get(mostVotedVersion.author_id) as string) || 'Usuario desconocido',
+        authorName: profileMap.get(mostVotedVersion.author_id) || 'Usuario desconocido',
         courses: []
       });
     });
