@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escalera al Éxito - TaskApp</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+            overflow-x: auto;
+        }
+
+        .escalera-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            perspective: 1000px;
+            min-height: 80vh;
+        }
+
+        .escalera {
+            position: relative;
+            transform: rotateX(15deg) rotateY(-5deg);
+            transform-style: preserve-3d;
+        }
+
+        .escalon {
+            width: 300px;
+            height: 80px;
+            margin-bottom: 10px;
+            position: relative;
+            transform-style: preserve-3d;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .escalon:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        .escalon-front {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #f0f0f0, #d1d1d1);
+            border: 2px solid #bbb;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            position: relative;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .escalon-top {
+            position: absolute;
+            top: -10px;
+            left: 5px;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(145deg, #fff, #e0e0e0);
+            border-radius: 8px 8px 0 0;
+            transform: rotateX(90deg);
+            transform-origin: bottom;
+        }
+
+        .nivel-1 { background: linear-gradient(145deg, #81C784, #66BB6A); }
+        .nivel-2 { background: linear-gradient(145deg, #FFB74D, #FF9800); }
+        .nivel-3 { background: linear-gradient(145deg, #64B5F6, #2196F3); }
+
+        .startup-base {
+            width: 250px;
+            height: 100px;
+            background: linear-gradient(145deg, #BA68C8, #9C27B0);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .exito-text {
+            font-size: 48px;
+            font-weight: bold;
+            color: #FFD700;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            margin-top: 30px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 3px 3px 6px rgba(0,0,0,0.5), 0 0 20px #FFD700; }
+            to { text-shadow: 3px 3px 6px rgba(0,0,0,0.5), 0 0 30px #FFD700, 0 0 40px #FFD700; }
+        }
+
+        .flecha {
+            font-size: 24px;
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .metrics {
+            position: absolute;
+            right: -200px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.9);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            font-size: 12px;
+            width: 180px;
+        }
+
+        .roi-box {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(145deg, #4CAF50, #388E3C);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .timeline {
+            position: absolute;
+            left: -100px;
+            top: 0;
+            height: 100%;
+            width: 50px;
+            background: linear-gradient(to bottom, #4CAF50, #FF9800, #2196F3);
+            border-radius: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .escalon { width: 250px; }
+            .metrics { display: none; }
+            .timeline { display: none; }
+            .roi-box { position: relative; margin: 20px auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="escalera-container">
+        <h1 style="color: white; text-align: center; margin-bottom: 30px; font-size: 36px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+            🎯 ESCALERA DE CALIDAD TASKAPP
+        </h1>
+        <p style="color: white; text-align: center; margin-bottom: 40px; font-size: 18px;">
+            "De 5 developers caóticos a equipo de clase mundial en 6 meses"
+        </p>
+
+        <div class="escalera">
+            <div class="timeline">
+                <div>Mes 6</div>
+                <div>Mes 4</div>
+                <div>Mes 2</div>
+                <div>Inicio</div>
+            </div>
+
+            <div class="exito-text">🏆 ÉXITO</div>
+            
+            <div class="flecha">▲</div>
+            
+            <div class="escalon">
+                <div class="escalon-front nivel-3">
+                    <div>
+                        <strong>🚀 NIVEL 3: INTEGRACIÓN</strong><br>
+                        🎪 Dashboard Grafana integrado<br>
+                        🧪 E2E testing automatizado<br>
+                        🤖 Pipeline completo CI/CD<br>
+                        <small>📊 85% coverage | ✅ Escalabilidad</small>
+                    </div>
+                </div>
+                <div class="escalon-top"></div>
+                <div class="metrics">
+                    <strong>Mes 5-6</strong><br>
+                    💰 $500/mes<br>
+                    🎯 15 min deploy<br>
+                    ⚡ 0 regresiones
+                </div>
+            </div>
+
+            <div class="flecha">▲</div>
+
+            <div class="escalon">
+                <div class="escalon-front nivel-2">
+                    <div>
+                        <strong>🟡 NIVEL 2: ESTANDARIZACIÓN</strong><br>
+                        🎯 ESLint + Prettier automático<br>
+                        ⚖️ Quality Gates bloqueando<br>
+                        📚 Definition of Done estándar<br>
+                        <small>📊 70% coverage | ✅ Consistencia</small>
+                    </div>
+                </div>
+                <div class="escalon-top"></div>
+                <div class="metrics">
+                    <strong>Mes 3-4</strong><br>
+                    💰 $200/mes<br>
+                    🎯 90% QG pass<br>
+                    ⚡ 95% compliance
+                </div>
+            </div>
+
+            <div class="flecha">▲</div>
+
+            <div class="escalon">
+                <div class="escalon-front nivel-1">
+                    <div>
+                        <strong>🟢 NIVEL 1: FUNDAMENTOS</strong><br>
+                        📋 Code Reviews básicos<br>
+                        📊 SonarQube setup<br>
+                        🧪 Testing 30% coverage<br>
+                        <small>📊 30% coverage | ✅ Baseline</small>
+                    </div>
+                </div>
+                <div class="escalon-top"></div>
+                <div class="metrics">
+                    <strong>Mes 1-2</strong><br>
+                    💰 $0 costo<br>
+                    🎯 -30% bugs<br>
+                    ⚡ 95% builds OK
+                </div>
+            </div>
+
+            <div class="flecha">▲</div>
+
+            <div class="startup-base">
+                <div>
+                    <strong>🏢 TASKAPP STARTUP</strong><br>
+                    👥 5 Developers<br>
+                    📱 React Native App<br>
+                    💰 Budget Limitado
+                </div>
+            </div>
+        </div>
+
+        <div class="roi-box">
+            <div style="font-size: 18px;">💰 ROI</div>
+            <div style="font-size: 24px;">238%</div>
+            <div style="font-size: 12px;">
+                Inversión: $2,400<br>
+                Ahorro: $8,100<br>
+                Payback: 3.2 meses
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animación de entrada
+        document.addEventListener('DOMContentLoaded', function() {
+            const escalones = document.querySelectorAll('.escalon');
+            escalones.forEach((escalon, index) => {
+                escalon.style.opacity = '0';
+                escalon.style.transform = 'translateY(50px)';
+                
+                setTimeout(() => {
+                    escalon.style.transition = 'all 0.6s ease';
+                    escalon.style.opacity = '1';
+                    escalon.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+
+            // Efecto de hover mejorado
+            escalones.forEach(escalon => {
+                escalon.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.05)';
+                });
+                
+                escalon.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+
+        // Función para exportar como imagen
+        function exportarComoImagen() {
+            // Usar html2canvas si está disponible
+            if (typeof html2canvas !== 'undefined') {
+                html2canvas(document.body).then(canvas => {
+                    const link = document.createElement('a');
+                    link.download = 'escalera-calidad-taskapp.png';
+                    link.href = canvas.toDataURL();
+                    link.click();
+                });
+            } else {
+                alert('Para exportar como imagen, incluye la librería html2canvas');
+            }
+        }
+    </script>
+</body>
+</html>
